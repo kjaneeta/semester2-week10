@@ -1,8 +1,7 @@
 # Task 1 Makefile
 
 CFLAGS = -Wall -Wextra -Werror
-LIBS = -lm
-EXECS = lower sin_sum
+EXECS = lower multiply sines
 
 help:
 	@echo "Task 1 Help:"
@@ -12,10 +11,20 @@ help:
 	@echo
 	@echo "Remove all executables with 'make clean'"
 
-%: %.c
-	gcc $(CFLAGS) $< -o $@ $(LIBS)
+lower: lower.o
+	gcc $< -o $@
+
+sines: sines.o
+	gcc $< -o $@ -lm
+
+multiply: multiply.o matrix.o
+	gcc $^ -o $@
+
+%.o: %.c
+	gcc $(CFLAGS) -c $<
 
 clean:
+	@rm -f *.o
 	@rm -f $(EXECS)
 	@rm -rf $(patsubst %,%.dSYM,$(EXECS))   # for clang on Macs
 

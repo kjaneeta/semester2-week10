@@ -31,27 +31,30 @@ We have also provided the text of Leo Tolstoy's famously lengthy novel
 
    As before, check the contents of `tmp.txt` and then remove the file.
 
-## `sin_sum.c`
+## `sines.c`
 
 This program invokes `sin()` from the C math library a very large number of
 times, summing the values that are returned.
 
 1. Examine the source code of `sin_sum.c`.
 
-2. Compile the program with `make sin_sum`, then time its execution with
+2. Compile the program with `make sines`, then time its execution with
 
-       time ./sin_sum
+       time ./sines
 
    Make a note of the times that you see.
 
-## Comparisons
+## `multiply.c`, `matrix.c`, `matrix.h`
 
-How does elapsed real time compare with the total of user and system CPU
-time for the programs in `lower.c` and `sin_sum.c`?
+The files `matrix.h` and `matrix.c` define a data structure and related
+operations for working with 2D matrices. The file `multiply.c` contains a
+program that creates two large (1000 rows x 1000 columns) matrices, fills them
+with random values, then multiplies them together.
 
-You should observe that CPU time represents nearly all of the elapsed time
-for `sin_sum.c`, whereas the bulk of the elapsed time for `lower.c` is
-not spent on the CPU.
+1. Examine the source code.
 
-The program in `sin_sum.c` does very little I/O and is **CPU-bound**,
-whereas the program in `lower.c` is **I/O-bound**.
+2. Compile the program with `make multiply`, then time its execution with
+
+       time ./multiply
+
+   Make a note of the times that you see.
