@@ -58,6 +58,11 @@ int main( void ) {
     int num1=2, num2=3;   // arguments 2,3
 
     // write code to loop through the 3 functions and print an appropriate sum for each, eg. "2 + 3 = 5"
+    for(int i = 0; i < *functions.length; i++)
+    {
+        
+    }
+
     // use the structure symbol and function-pointer data rather than hard-coding values
 
     free(myFunctions);
